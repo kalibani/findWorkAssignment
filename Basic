@@ -1,0 +1,66 @@
+1. What is hoisting in javascript
+  Hoisting is a JavaScript mechanism where variables and function declarations are
+  moved to the top of their scope before code execution. this means that no matter where functions
+  and variables are declared, they are moved to the top of their scope
+  regardless of whether their scope is global or local.
+2. Why do we wrap JS content into a function block
+  By wrapping JS content in a function block you create closure,
+  which helps avoid potential name clashes between different JavaScript modules and libraries.
+  Also, it allows to use easily referenceable (presumably shorter) alias for a global variables.
+3. What is the meaning os use strict
+  The purpose of "use strict" is to indicate that the code should be executed in "strict mode".
+  With strict mode, you can not, for example, use undeclared variables.
+  Strict mode is declared by adding "use strict"; to the beginning of a script or a function.
+  Declared at the beginning of a script, it has global scope (all code in the script will execute in strict mode):
+4. What is a promise and show small example of how you would use it in practice
+  Promise is a javascript feature for handle asynchronous programming
+  here is small example :
+  getUserByName('andrew')
+    .then(user => {
+    return getUserAccountById(user.id)
+      .then(userAccount => {
+        // now, I have both the "user" and the "userAccount"
+      });
+    });
+5. What is a closure? Provide an example
+  A closure is an inner function that has access to the outer (enclosing) function’s variables
+  The closure has three scope chains: it has access to its own scope (variables defined between its curly brackets),
+  it has access to the outer function’s variables, and it has access to the global variables.
+  function showName(firstName, lastName) {
+​    var nameIntro = "Your name is ";
+​​    // this inner function has access to the outer function's variables, including the parameter​
+​​​​​    function makeFullName() {
+​​​​​​        return nameIntro + firstName + " " + lastName;
+    }
+    ​​return makeFullName;
+  }
+​   showName("Kautzar", "Alibani"); // Your name is Kautzar Alibani 
+6. How do you clone an object
+  by using spread operator like:
+  let obj = { a: 1, b: 2 }
+  let objClone = { ...obj }
+7. What are the two paradigms in JS
+  functional and object oriented programming
+8. Describe difference between inheritence and prototypal inheritence? Name example where usage of each would be appropriate
+  Inheritance:
+    instances inherit from classes (like a blueprint — a description of the class),
+    and create sub-class relationships: hierarchical class taxonomies.
+    Instances are typically instantiated via constructor functions with the new keyword.
+    Class inheritance may or may not use the class keyword from ES6.
+  Prototypal Inheritance:
+    instances inherit directly from other objects.
+    Instances are typically instantiated via factory functions or Object.create().
+    Instances may be composed from many different objects, allowing for easy selective inheritance.*
+9. What is two way data binding
+  Two-way binding just means:
+  A. When properties in the model get updated, so does the UI.
+  B. When UI elements get updated, the changes get propagated back to the model.
+10. What is async programming and explain its importance in JS
+  Synchronous and Asynchronous programming:
+  In the world of programming these two terms are used to differentiate about the execution of commands in our code.
+  Synchronous is the most common and easy to understand. Each command is executed one by one in the order of the code you write.
+  While Asynchronous execution or output results are not always based on code sequence, but based on processing time.
+  Asynchronous execution will not block or wait for a command to complete.
+  Instead of waiting asynchronously will execute the next command.
+  It's importance because asynchronous techniques manage communication that is not possible to sync
+  or have to wait like ajax request process, file operations, connection to database, websocket, real time communication as in chat app and many more.

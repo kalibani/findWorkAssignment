@@ -1,0 +1,8 @@
+.row > div {
+  text-align: left;
+  margin-top: 10%;
+  margin-left: 20%;
+  margin-right: 17%;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+}
